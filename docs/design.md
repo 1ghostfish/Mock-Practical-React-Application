@@ -32,7 +32,7 @@ Your database has two **one-to-many** relationships that are built the same way,
 
 ### `Artist` and `Album` (one-to-many)
 
-> What is the cardinality, in both directions? Can either side have zero? Use your sample data.
+> How many albums can one artist have, and how many artists can one album belong to? Can either side have none? Use your sample data.
 
 > Which table holds the foreign key, and why that table and not the other?
 
@@ -44,7 +44,7 @@ Your database has two **one-to-many** relationships that are built the same way,
 
 ### `Playlist` and `Track` (many-to-many)
 
-> What is the cardinality, in both directions? Some tracks are on no playlists. What does that tell you?
+> How many tracks can one playlist hold, and how many playlists can one track appear on? Some tracks are on no playlists. What does that tell you?
 
 > Your schema has no foreign key on `Playlist` or `Track`. Where are the links stored, and what does one row there mean?
 

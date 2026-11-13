@@ -16,15 +16,15 @@ Your job is to design and build the database with Prisma, fill it with sample da
 
 You build the database **one table at a time**. Each task gives you **less help** than the one before, so by Task 4 you are working like a developer who has been handed a requirement and nothing else.
 
-| Task  | Table      | How much help you get                                          | Suggested time | Aim to finish by |
-| ----- | ---------- | -------------------------------------------------------------- | -------------- | ---------------- |
-| Setup |            | [setup.md](setup.md) steps 1 to 3.                             | 10 min         | 0:10             |
-| 1     | `Artist`   | **Worked example.** All the code is given. Copy it and run it. | 10 min         | 0:20             |
-| 2     | `Album`    | **Guided.** Hints and one example. You write the rest.         | 20 min         | 0:40             |
-| 3     | `Track`    | **Requirements only.** Use Task 2 as your pattern.             | 15 min         | 0:55             |
-| 4     | `Playlist` | **Business rule only.** You plan it and build it from a short reference. | 30 min | 1:25 |
-| 5     | ERD        | Screenshot your finished database.                             | 5 min          | 1:30             |
-| 6     | Report     | Write up your design in `docs/design.md`.                      | 30 min         | 2:00             |
+| Task  | Table      | How much help you get                                                    | Suggested time | Aim to finish by |
+| ----- | ---------- | ------------------------------------------------------------------------ | -------------- | ---------------- |
+| Setup |            | [setup.md](setup.md) steps 1 to 3.                                       | 10 min         | 0:10             |
+| 1     | `Artist`   | **Worked example.** All the code is given. Copy it and run it.           | 10 min         | 0:20             |
+| 2     | `Album`    | **Guided.** Hints and one example. You write the rest.                   | 20 min         | 0:40             |
+| 3     | `Track`    | **Requirements only.** Use Task 2 as your pattern.                       | 15 min         | 0:55             |
+| 4     | `Playlist` | **Business rule only.** You plan it and build it from a short reference. | 30 min         | 1:25             |
+| 5     | ERD        | Screenshot your finished database.                                       | 5 min          | 1:30             |
+| 6     | Report     | Write up your design in `docs/design.md`.                                | 30 min         | 2:00             |
 
 > **At 1 hour 30 minutes, stop building and start Task 6**, even if you have not finished Task 4. The report is where most of your credit comes from, and it has a section for unfinished work.
 
@@ -46,12 +46,12 @@ I can only give credit for the thinking I can see. A clear plan for an unfinishe
 
 ## What you will hand in
 
-| #   | Deliverable                                                 | Where it goes                        |
-| --- | ----------------------------------------------------------- | ------------------------------------ |
-| 1   | A database schema with four tables                          | `prisma/schema.prisma`               |
-| 2   | One migration for each table                                | `prisma/migrations/`                 |
-| 3   | A seed script that fills the database with sample data      | `prisma/seed.ts`                     |
-| 4   | A screenshot of your ERD from the Prisma Studio Visualizer  | `docs/erd.png`                       |
+| #   | Deliverable                                                 | Where it goes                         |
+| --- | ----------------------------------------------------------- | ------------------------------------- |
+| 1   | A database schema with four tables                          | `prisma/schema.prisma`                |
+| 2   | One migration for each table                                | `prisma/migrations/`                  |
+| 3   | A seed script that fills the database with sample data      | `prisma/seed.ts`                      |
+| 4   | A screenshot of your ERD from the Prisma Studio Visualizer  | `docs/erd.png`                        |
 | 5   | A design report explaining your planning and your decisions | `docs/design.md` (questions provided) |
 
 ### Already done for you
@@ -182,12 +182,7 @@ Then add the other side of the relation to `Artist`: a field called `albums` tha
 Here is the same kind of relationship in a **library** database, where each book has one author. Use it as your pattern:
 
 ```prisma
-model Book {
-  id       Int    @id @default(autoincrement())
-  title    String
-  authorId Int
   author   Author @relation(fields: [authorId], references: [id])
-}
 ```
 
 - `authorId` is the foreign key: a real column that stores the author's `id`.
