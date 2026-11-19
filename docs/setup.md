@@ -56,7 +56,7 @@ npx prisma generate
 ```
 
 - `format` tidies the schema and shows any mistakes.
-- `migrate dev` creates the tables. Run it again after each schema change, with a new name (e.g. `--name add-track`).
+- `migrate dev` creates the tables. Run it again after each schema change, with a new name (e.g. `--name add-recipe`).
 - `generate` updates the Prisma Client so your code gets autocomplete.
 
 ## 5. Check the database is running
